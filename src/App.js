@@ -2,6 +2,10 @@
 import React from "react";
 import "./App.css";
 import Weather from "./Components/Weather";
+/* src/WeatherForm.css */
+import "./Weather.css";
+
+
 
 function App() {
   return (
