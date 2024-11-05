@@ -1,0 +1,43 @@
+/* src/WeatherForm.css */
+
+.weather-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  
+  .weather-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Input focus animation */
+  .weather-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Button animation */
+  .weather-form button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .weather-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  .weather-form button:active {
+    transform: scale(0.95);
+  }
+  
