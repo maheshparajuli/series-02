@@ -10,7 +10,7 @@ function Weather() {
   const fetchWeather = async (cityName) => {
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=YOUR_API_KEY`
+       `https://api.weatherapi.com/v1/current.json?key=b06c5f09b6a64bb5a73123211240611&q=${cityName}&aqi=no`
       );
       if (!response.ok) {
         throw new Error("City not found");
@@ -42,10 +42,10 @@ function Weather() {
       {error && <p className="error-message">{error}</p>}
       {weatherData && (
         <div className="weather-info">
-          <h2>{weatherData.name}</h2>
-          <p>Temperature: {weatherData.main.temp}°C</p>
-          <p>Weather: {weatherData.weather[0].description}</p>
-          <p>Humidity: {weatherData.main.humidity}%</p>
+          <h2>{weatherData.location.name}</h2>
+          <p>Temperature: {weatherData.current.temp_c}°C</p>
+          <p>Weather: {weatherData.current.condition.text}</p>
+          <p>Humidity: {weatherData.current.humidity}%</p>
         </div>
       )}
     </div>

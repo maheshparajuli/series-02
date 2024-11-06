@@ -1,6 +1,7 @@
 // src/components/WeatherForm.js
 import React from "react";
 
+
 function WeatherForm({ city, onCityChange, onSearch }) {
   return (
     <div className="weather-form">
