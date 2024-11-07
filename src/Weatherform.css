@@ -1,52 +1,69 @@
+/* General styling for the weather form container */
 .weather-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: #f0f0f0;
-    border-radius: 0.5rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
   
-  .weather-form input,
-  .weather-form button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 0.25rem;
-    font-size: 1rem;
-  }
-  
-  .weather-form input {
-    flex-grow: 1;
-  }
-  
-  .weather-form button {
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .weather-form button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Animations */
-  .animate__animated {
-    --animate-duration: 0.5s;
-  }
-  
-  .animate__fadeIn {
-    --animate-delay: 0.2s;
-  }
-  
-  .animate__pulse {
-    --animate-duration: 1s;
-    --animate-iteration-count: infinite;
-  }
-  
-  .animate__bounce {
-    --animate-duration: 1s;
-    --animate-iteration-count: infinite;
-  }
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Styling for the weather icons */
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+/* Specific colors for each weather icon */
+.sun-icon {
+  color: yellow;
+}
+
+.cloudy-icon {
+  color: gray;
+}
+
+.rain-icon {
+  color: blue;
+}
+
+.snow-icon {
+  color: white;
+}
+
+/* Styling for the input box */
+.weather-input {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: gray;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+/* Styling for the search button */
+.search-button {
+  margin-top: 20px;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}
