@@ -1,11 +1,8 @@
 
 import React from "react";
-import "./App.css";
+import './App.css';
+import './Weatherform.css'
 import Weather from "./Components/Weather";
-
-
-
-
 
 function App() {
   return (
