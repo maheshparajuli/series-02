@@ -1,7 +1,6 @@
 import React from "react";
 import { Sun, Cloud, CloudRain, CloudSnow } from "lucide-react";
 
-
 const WeatherForm = ({ city, weather, onCityChange, onSearch }) => {
   const getWeatherIcon = () => {
     switch (weather) {

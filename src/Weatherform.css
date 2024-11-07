@@ -1,69 +1,36 @@
-/* General styling for the weather form container */
 .weather-form {
-  
-  background-size: cover;
-  background-position: center;
-  min-height: 300px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  transition: background 0.3s ease-in-out;
+  gap: 10px;
+  max-width: 400px;  /* Adjust the width as necessary */
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the weather icons */
-.weather-icon {
-  width: 64px;
-  height: 64px;
-}
-
-/* Specific colors for each weather icon */
-.sun-icon {
-  color: yellow;
-}
-
-.cloudy-icon {
-  color: gray;
-}
-
-.rain-icon {
-  color: blue;
-}
-
-.snow-icon {
-  color: white;
-}
-
-/* Styling for the input box */
 .weather-input {
-  padding: 16px;
-  border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.5);
-  color: gray;
-  text-align: center;
-  border: none;
-  font-size: 16px;
-  width: 100%;
-  max-width: 300px;
-  margin-top: 20px;
+  width: 150px;  /* Adjust width for smaller input box */
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-/* Styling for the search button */
 .search-button {
-  margin-top: 20px;
-  background-color: #3498db;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #007bff;
   color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .search-button:hover {
-  background-color: #2980b9;
+  background-color: #0056b3;
+}
+
+.weather-icon {
+  font-size: 24px;  /* Adjust icon size as needed */
 }
