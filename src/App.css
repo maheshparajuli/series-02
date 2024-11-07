@@ -1,43 +1,80 @@
 
-.weather-container {
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background-color: #f0f0f0;
+  min-height: 100vh;
+  background-color: #f0f4f8;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  transition: background-color 0.3s ease;
 }
 
-.error-message {
-  color: #ff0000;
+
+.app-title {
+  font-size: 3rem;
   font-weight: bold;
-  margin-top: 1rem;
-}
-
-.weather-info {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  color: #3498db;
+  margin-bottom: 20px;
   text-align: center;
-}
-
-/* Animations */
-.animate__animated {
-  --animate-duration: 0.5s;
-}
-
-.animate__fadeIn {
-  --animate-delay: 0.2s;
-}
-
-.animate__fadeInUp {
-  --animate-delay: 0.5s;
-}
-
-.animate__shakeX {
-  --animate-duration: 0.7s;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  animation-delay: 0.5s; 
 }
 
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect for title */
+.app-title:hover {
+  color: #2980b9;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Animating the background color change */
+.App:hover {
+  background-color: #ecf0f1;
+}
+
+/* Styling for the weather form (to be used in WeatherForm component) */
+.weather-form {
+  padding: 20px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  margin: 20px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Keyframe for the Weather form animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth hover effect for buttons (used in WeatherForm) */
+.search-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
