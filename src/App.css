@@ -1,28 +1,22 @@
-/* App.css */
-html, body {
-  height: 100%;  /* Set the page height to fill the entire screen */
-  margin: 0;
-}
-
 body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;  /* Ensure content is spaced between top and bottom */
-  align-items: center;  /* Horizontally center the content */
+  justify-content: space-between; 
+  align-items: center; 
   min-height: 100vh;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Vertically center the content */
-  align-items: center;  /* Horizontally center the content */
-  flex-grow: 1;  /* Allow the content to grow and take up the space */
-  text-align: center;  /* Center text in the content */
+  justify-content: center;  
+  align-items: center;  
+  flex-grow: 1; 
+  text-align: center;  
 }
 
 .app-title {
-  margin-bottom: 1rem; /* Space between title and content */
+  margin-bottom: 1rem; 
 }
 
 
@@ -81,19 +75,5 @@ body {
   transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* App.css */
-.app-footer {
-  text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  font-size: 14px;
-}
 
-.app-footer p {
-  margin: 0;
-}
 
