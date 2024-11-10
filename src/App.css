@@ -1,105 +1,190 @@
 /* App.css */
+:root {
+  --primary-color: #2980b9;
+  --secondary-color: #e74c3c;
+  --accent-color: #f1c40f;
+  --gradient-start: #3498db;
+  --gradient-end: #2ecc71;
+}
 
 html, body {
   height: 100%;
   margin: 0;
   font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
 }
 
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-content {
-  flex-grow: 1; /* This allows the main content to take up remaining space */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  animation: fadeIn 1s ease-in-out; /* Fade-in effect for main content */
+  animation: floatIn 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  backdrop-filter: blur(5px);
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.8);
+  }
+  70% {
+    transform: translateY(10px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .app-title {
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #333;
-  animation: fadeInTitle 1s ease-in-out; /* Fade-in effect for title */
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: titlePulse 2s infinite;
+  position: relative;
 }
 
-/* Animations for content */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes titlePulse {
+  0% { transform: scale(1) }
+  50% { transform: scale(1.05) }
+  100% { transform: scale(1) }
 }
 
-@keyframes fadeInTitle {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+.app-title::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
 }
 
-/* Hover effect for title */
+.app-title:hover::after {
+  width: 100%;
+}
+
 .app-title:hover {
-  color: #2980b9;
+  color: var(--accent-color);
   cursor: pointer;
-  transform: scale(1.1);
-  transition: transform 0.3s ease, color 0.3s ease;
+  animation: rubberBand 1s;
 }
 
-/* Animating the background color change */
-.App:hover {
-  background-color: #ecf0f1;
-  animation: backgroundColorChange 1s ease-in-out;
+@keyframes rubberBand {
+  0% { transform: scale(1) }
+  30% { transform: scaleX(1.25) scaleY(0.75) }
+  40% { transform: scaleX(0.75) scaleY(1.25) }
+  60% { transform: scaleX(1.15) scaleY(0.85) }
+  100% { transform: scale(1) }
 }
 
-@keyframes backgroundColorChange {
-  0% {
-    background-color: #fff;
-  }
-  100% {
-    background-color: #ecf0f1;
-  }
-}
-
-/* Styles for the WeatherForm component */
 .weather-form {
-  padding: 20px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
   width: 100%;
   max-width: 500px;
   margin: 20px;
-  animation: fadeInUp 1s ease-in-out; /* Fade-up effect for form */
+  transform-style: preserve-3d;
+  animation: formFloat 1.5s ease-out;
 }
 
-@keyframes fadeInUp {
+@keyframes formFloat {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px) rotateX(-10deg);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) rotateX(0);
   }
 }
 
+.search-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.search-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
 .search-button:hover {
-  background-color: #2980b9;
-  transform: scale(1.05);
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  background: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Add floating particles in the background */
+.App::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, transparent 100%);
+  opacity: 0.5;
+  animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% { transform: translateY(0) rotate(0deg) }
+  100% { transform: translateY(-100vh) rotate(360deg) }
+}
+
+/* Add shine effect for interactive elements */
+.weather-form input,
+.weather-form button {
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-form input:focus,
+.weather-form button:focus {
+  animation: shine 1.5s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { box-shadow: 0 0 5px var(--primary-color) }
+  50% { box-shadow: 0 0 20px var(--primary-color) }
+  100% { box-shadow: 0 0 5px var(--primary-color) }
 }
