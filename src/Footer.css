@@ -1,4 +1,3 @@
-
 /* Footer.css */
 
 .footer {
@@ -8,6 +7,18 @@
   text-align: center;
   width: 100%;
   position: relative;
+  animation: fadeInFooter 1s ease-in-out; /* Fade-in effect for footer */
+}
+
+@keyframes fadeInFooter {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .footer-content {
@@ -22,6 +33,19 @@
   background-color: #888;
   margin-top: 5px;
   border-radius: 2px;
+  opacity: 0;
+  animation: fadeInDecoration 2s ease-in-out 1s forwards; /* Fade-in effect for decoration */
+}
+
+@keyframes fadeInDecoration {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 /* Ensures footer stays at the bottom */

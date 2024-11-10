@@ -19,16 +19,17 @@ html, body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  animation: fadeIn 1s ease-in-out; /* Fade-in effect for main content */
 }
 
 .app-title {
   margin-bottom: 1rem;
   font-size: 2rem;
   color: #333;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeInTitle 1s ease-in-out; /* Fade-in effect for title */
 }
 
-/* Animations and hover effects */
+/* Animations for content */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -40,11 +41,38 @@ html, body {
   }
 }
 
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover effect for title */
 .app-title:hover {
   color: #2980b9;
   cursor: pointer;
   transform: scale(1.1);
   transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Animating the background color change */
+.App:hover {
+  background-color: #ecf0f1;
+  animation: backgroundColorChange 1s ease-in-out;
+}
+
+@keyframes backgroundColorChange {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: #ecf0f1;
+  }
 }
 
 /* Styles for the WeatherForm component */
@@ -56,7 +84,7 @@ html, body {
   width: 100%;
   max-width: 500px;
   margin: 20px;
-  animation: fadeInUp 1s ease-in-out;
+  animation: fadeInUp 1s ease-in-out; /* Fade-up effect for form */
 }
 
 @keyframes fadeInUp {
