@@ -1,25 +1,34 @@
-body {
+/* App.css */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.App {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-  align-items: center; 
   min-height: 100vh;
 }
 
 .main-content {
+  flex-grow: 1; /* This allows the main content to take up remaining space */
   display: flex;
   flex-direction: column;
-  justify-content: center;  
-  align-items: center;  
-  flex-grow: 1; 
-  text-align: center;  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .app-title {
-  margin-bottom: 1rem; 
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #333;
+  animation: fadeIn 1s ease-in-out;
 }
 
-
+/* Animations and hover effects */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -31,7 +40,6 @@ body {
   }
 }
 
-/* Hover effect for title */
 .app-title:hover {
   color: #2980b9;
   cursor: pointer;
@@ -39,12 +47,7 @@ body {
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Animating the background color change */
-.App:hover {
-  background-color: #ecf0f1;
-}
-
-/* Styling for the weather form (to be used in WeatherForm component) */
+/* Styles for the WeatherForm component */
 .weather-form {
   padding: 20px;
   border-radius: 8px;
@@ -56,7 +59,6 @@ body {
   animation: fadeInUp 1s ease-in-out;
 }
 
-/* Keyframe for the Weather form animation */
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -68,12 +70,8 @@ body {
   }
 }
 
-/* Smooth hover effect for buttons (used in WeatherForm) */
 .search-button:hover {
   background-color: #2980b9;
   transform: scale(1.05);
   transition: transform 0.2s ease, background-color 0.3s ease;
 }
-
-
-
