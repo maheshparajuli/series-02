@@ -115,13 +115,13 @@
   100% { left: 200%; }
 }
 
-/* Glowing effect on hover */
+
 .footer:hover {
   box-shadow: 0 -5px 30px var(--glow-color);
   transition: box-shadow 0.3s ease;
 }
 
-/* Floating particles effect */
+
 .footer::after {
   content: '';
   position: absolute;
