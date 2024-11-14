@@ -1,4 +1,5 @@
 
+
 :root {
   --footer-bg: linear-gradient(90deg, #2c3e50, #3498db);
   --footer-text: #ecf0f1;
@@ -19,17 +20,8 @@
 }
 
 @keyframes footerSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  70% {
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(100%); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .footer::before {
@@ -55,22 +47,6 @@
   position: relative;
   z-index: 1;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  animation: contentPulse 2s infinite ease-in-out;
-}
-
-@keyframes contentPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-}
-
-.footer-content:hover {
-  animation: wiggle 0.5s ease-in-out;
-}
-
-@keyframes wiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(-1deg); }
-  75% { transform: rotate(1deg); }
 }
 
 .footer-decoration {
@@ -85,18 +61,8 @@
 }
 
 @keyframes decorationExpand {
-  0% {
-    width: 0;
-    opacity: 0;
-  }
-  50% {
-    width: 150px;
-    opacity: 0.5;
-  }
-  100% {
-    width: 100px;
-    opacity: 1;
-  }
+  0% { width: 0; opacity: 0; }
+  100% { width: 100px; opacity: 1; }
 }
 
 .footer-decoration::after {
@@ -115,12 +81,10 @@
   100% { left: 200%; }
 }
 
-
 .footer:hover {
   box-shadow: 0 -5px 30px var(--glow-color);
   transition: box-shadow 0.3s ease;
 }
-
 
 .footer::after {
   content: '';
@@ -138,7 +102,6 @@
   100% { transform: translateY(-100%) rotate(360deg); }
 }
 
-/* Text animation for any links in footer */
 .footer a {
   color: var(--footer-text);
   text-decoration: none;
@@ -164,7 +127,6 @@
   transform-origin: left;
 }
 
-/* Responsive animations */
 @media (prefers-reduced-motion: reduce) {
   .footer,
   .footer-decoration,
@@ -176,7 +138,6 @@
   }
 }
 
-/* Ensures footer stays at bottom */
 .App {
   display: flex;
   flex-direction: column;
@@ -184,7 +145,6 @@
   position: relative;
 }
 
-/* Add wave effect at the top of footer */
 .footer-wave {
   position: absolute;
   top: -10px;

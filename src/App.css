@@ -1,3 +1,5 @@
+
+
 /* App.css */
 :root {
   --primary-color: #2980b9;
@@ -42,17 +44,8 @@ html, body {
 }
 
 @keyframes floatIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px) scale(0.8);
-  }
-  70% {
-    transform: translateY(10px) scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  0% { opacity: 0; transform: translateY(-50px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .app-title {
@@ -60,14 +53,7 @@ html, body {
   font-size: 2.5rem;
   color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  animation: titlePulse 2s infinite;
   position: relative;
-}
-
-@keyframes titlePulse {
-  0% { transform: scale(1) }
-  50% { transform: scale(1.05) }
-  100% { transform: scale(1) }
 }
 
 .app-title::after {
@@ -85,20 +71,6 @@ html, body {
   width: 100%;
 }
 
-.app-title:hover {
-  color: var(--accent-color);
-  cursor: pointer;
-  animation: rubberBand 1s;
-}
-
-@keyframes rubberBand {
-  0% { transform: scale(1) }
-  30% { transform: scaleX(1.25) scaleY(0.75) }
-  40% { transform: scaleX(0.75) scaleY(1.25) }
-  60% { transform: scaleX(1.15) scaleY(0.85) }
-  100% { transform: scale(1) }
-}
-
 .weather-form {
   padding: 25px;
   border-radius: 15px;
@@ -108,19 +80,12 @@ html, body {
   width: 100%;
   max-width: 500px;
   margin: 20px;
-  transform-style: preserve-3d;
   animation: formFloat 1.5s ease-out;
 }
 
 @keyframes formFloat {
-  0% {
-    opacity: 0;
-    transform: translateY(50px) rotateX(-10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) rotateX(0);
-  }
+  0% { opacity: 0; transform: translateY(50px) rotateX(-10deg); }
+  100% { opacity: 1; transform: translateY(0) rotateX(0); }
 }
 
 .search-button {
@@ -153,7 +118,6 @@ html, body {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Add floating particles in the background */
 .App::before {
   content: '';
   position: absolute;
@@ -171,7 +135,6 @@ html, body {
   100% { transform: translateY(-100vh) rotate(360deg) }
 }
 
-/* Add shine effect for interactive elements */
 .weather-form input,
 .weather-form button {
   position: relative;
