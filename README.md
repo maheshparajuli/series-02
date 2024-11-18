@@ -25,3 +25,4 @@ A modern weather application built with React that allows users to search and re
 - Search input field for city name.
 - Handles form submissions.
 - Displays weather condition icons.
+```
