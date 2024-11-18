@@ -18,6 +18,7 @@ A modern weather application built with React that allows users to search and re
 - Displays current weather details: temperature, humidity, wind speed, etc.
 - Fetches weather data from WeatherAPI.
 - Shows loading and error states.
+```
 
 
 ## WeatherForm Component
@@ -26,3 +27,13 @@ A modern weather application built with React that allows users to search and re
 - Handles form submissions.
 - Displays weather condition icons.
 ```
+## Footer Component
+```jsx
+- Simple footer displaying app information or contact details.
+```
+
+## 💻 Installation
+
+git clone https://github.com/maheshparajuli/weather-app.git
+cd weather-app
+
