@@ -20,7 +20,7 @@ A modern weather application built with React that allows users to search and re
 - Shows loading and error states.
 
 
-### WeatherForm Component
+## WeatherForm Component
 ```jsx
 - Search input field for city name.
 - Handles form submissions.
