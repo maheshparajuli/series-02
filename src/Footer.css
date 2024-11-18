@@ -13,14 +13,11 @@
 
 .contact-info {
   margin-bottom: 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
 }
 
 .contact-item {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   color: #495057;
