@@ -34,6 +34,19 @@ A modern weather application built with React that allows users to search and re
 
 ## 💻 Installation
 
-git clone https://github.com/maheshparajuli/weather-app.git
-cd weather-app
+1. Clone the repository:
+```bash
+git clone https://github.com/maheshparajuli/series-02.git
+cd series-02
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm start
+```
 
