@@ -13,7 +13,7 @@ const WeatherForm = ({ city, weather, onCityChange, onSearch }) => {
       case "snowy":
         return <CloudSnow className="weather-icon snow-icon" />;
       default:
-        return null; // If no weather condition is specified, return nothing
+        return null; 
     }
   };
 
