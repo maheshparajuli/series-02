@@ -49,4 +49,61 @@ npm install
 ```bash
 npm start
 ```
+## 🔧 Usage
 
+### Fetching Weather Data
+```jsx
+// Example usage of Weather component
+<Weather city="Kathmandu" />
+```
+
+### Weather Search Form
+```jsx
+// Example usage of WeatherForm component
+<WeatherForm onSearch={(city) => {
+  // Handle city weather fetch
+}} />
+```
+
+## 📝 Props
+
+### Weather Component
+```typescript
+interface WeatherProps {
+  city: string; // The name of the city to fetch weather for
+  temperature: string; // The current temperature
+  condition: string; // Weather condition description
+  humidity: string; // Percentage of humidity
+  windSpeed: string; // Wind speed information
+}
+```
+
+### WeatherForm Component
+```typescript
+interface WeatherFormProps {
+  onSearch: (city: string) => void; // Function to handle weather search
+}
+```
+
+## 🎨 Styling
+
+The application uses custom CSS for styling. Ensure the following CSS files are included:
+- `Weather.css`
+- `WeatherForm.css`
+
+ ## 🌐 API Integration
+
+- **API Used**: [WeatherAPI](https://www.weatherapi.com/)
+- **Endpoint**: [`https://api.weatherapi.com/v1/current.json`](https://api.weatherapi.com/v1/current.json)
+- **Parameters**:
+  - `key`: Your WeatherAPI key
+  - `q`: The city name
+  - Additional parameters can be configured as needed.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
